@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npm run server:dev",
+    "start": "concurrently --kill-others \"npm run server:dev\" \"npm run server:mock\" ",
     "build": "npm run clean:dist && webpack --config webpack.config.js --progress --profile",
     "clean:dist": "del dist",
     "server:dev": "webpack-dev-server --config ./webpack.config.js --progress --profile --watch --content-base src --inline --hot",
@@ -17,7 +17,7 @@
   "dependencies": {
     "babel-polyfill": "^6.23.0",
     "babel-runtime": "^6.23.0",
-    "isomorphic-fetch": "^2.2.1",
+    "fetch-ponyfill": "^4.0.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-redux": "^5.0.3",

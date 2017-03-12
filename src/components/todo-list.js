@@ -2,37 +2,52 @@ import React, {Component} from "react"
 import { connect } from "react-redux"
 
 import { Todo } from "./todo"
-import { toggleTodo } from "../actions"
+import { toggleTodo, fetchTodos, VisibilityFilters } from "../actions"
 
 @connect(
   (state) => {
     return {
-      todos: state.todos
+      todos: state.todos,
+      visibility: state.visibilityFilter
     }
   },
  (dispatch) => {
    return {
      onTodoClick: (id) => {
-        dispatch(toggleTodo(id))
-      }
+       dispatch(toggleTodo(id))
+     },
+     getTodo: () => {
+       dispatch(fetchTodos())
+     }
    }
  }
 )
 export class TodoList extends Component {
+  componentDidMount() {
+    this.props.getTodo();
+  }
   makeTodo(todo) {
-    return (
+    let jsx = (
       <Todo
         key={todo.id}
         {...todo}
-        onClick={(e) => { onTodoClick(todo.id) }} />
+        onClick={(e) => { this.props.onTodoClick(todo.id) }} />
     )
+
+    if(
+      (this.props.visibility == VisibilityFilters.SHOW_ALL) ||
+      (this.props.visibility == VisibilityFilters.SHOW_COMPLETED && todo.completed) ||
+      (this.props.visibility == VisibilityFilters.SHOW_ACTIVE && !todo.completed)
+    ) {
+      return jsx;
+    }
   }
   render() {
     return (
-      <ul>
+      <ul style={{listStyle: "none"}}>
         {
-          this.props.todos.map((todo) => {
-            this.makeTodo(todo)
+          this.props.todos.items.map((todo) => {
+            return this.makeTodo(todo)
           })
         }
       </ul>

@@ -1,0 +1,24 @@
+{
+  "posts": [
+    { "id": 1, "title": "json-server", "authorId": 1 },
+    { "id": 2, "title": "http-server", "authorId": 2 },
+    { "id": 3, "title": "json-server", "authorId": 2 },
+    { "id": 4, "title": "http-server", "authorId": 1 },
+    { "id": 5, "title": "node-server", "authorId": 2 }
+  ],
+  "comments": [
+    { "id": 1, "body": "json server is great", "postId": 1 },
+    { "id": 2, "body": "json server is flexible and ok", "postId": 3 },
+    { "id": 3, "body": "still http server is better", "postId": 1 },
+    { "id": 4, "body": "http server is best", "postId": 2 },
+    { "id": 5, "body": "http server is very low level", "postId": 4 },
+    { "id": 6, "body": "please use node server then", "postId": 5 },
+    { "id": 7, "body": "http server sucks", "postId": 2 },
+    { "id": 8, "body": "json server is better", "postId": 2 },
+    { "id": 9, "body": "node server is again low level", "postId": 5 }
+  ],
+  "authors": [
+    {"name": "typicode", "id": 1},
+    {"name": "vineet", "id": 2}
+  ]
+}

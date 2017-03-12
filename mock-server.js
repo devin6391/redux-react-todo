@@ -6,11 +6,12 @@ var customRoutes = require("./mock-data/mock-routes.js")
 
 router.render = function (req, res) {
   res.jsonp({
-   body: res.locals.data
+    respnseCode: 200,
+    body: res.locals.data
   })
 }
 
-server.use(middlewares)
+// server.use(middlewares)
 
 // Add custom routes before JSON Server router
 server.get('/echo', function (req, res) {
@@ -34,6 +35,7 @@ server.use(function (req, res, next) {
   if (req.method === 'POST') {
     req.body.createdAt = Date.now()
   }
+  res.header('Access-Control-Allow-Origin', '*');
   // Continue to JSON Server router
   next()
 })
