@@ -4,31 +4,58 @@
       "id": 1,
       "createdAt": 1469212200000,
       "completed": true,
-      "text": "Learn React"
+      "text": "Learn React",
+      "authorId": 1,
+      "description": "Yes! I can learn it"
     },
     {
       "id": 2,
       "createdAt": 1469989800000,
       "completed": false,
-      "text": "Learn Redux"
+      "text": "Learn Redux",
+      "authorId": 2,
+      "description": "Yes! I can learn it too"
     },
     {
       "id": 3,
       "createdAt": 1471717800000,
       "completed": true,
-      "text": "Make a synchronous redux app"
+      "text": "Make a synchronous redux app",
+      "authorId": 1,
+      "description": "I will try to learn it"
     },
     {
       "id": 4,
       "createdAt": 1475951400000,
       "completed": false,
-      "text": "Make an async redux app"
+      "text": "Make an async redux app",
+      "authorId": 2,
+      "description": "Its getting tough to learn everything"
     },
     {
       "id": 5,
       "createdAt": 1482949800000,
       "completed": false,
-      "text": "Develop a game with react-redux"
+      "text": "Develop a game with react-redux",
+      "authorId": 3,
+      "description": "No! I can't take it anymore"
+    }
+  ],
+  "authors": [
+    {
+      "id": 1,
+      "firstName": "Vineet",
+      "lastName": "Dev"
+    },
+    {
+      "id": 2,
+      "firstName": "Rajesh",
+      "lastName": "Kumar"
+    },
+    {
+      "id": 3,
+      "firstName": "Manish",
+      "lastName": "Deo"
     }
   ]
 }

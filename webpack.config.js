@@ -1,6 +1,7 @@
 var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 const ENV = process.env.ENV = process.env.NODE_ENV = 'development';
 const HOST = process.env.HOST || 'localhost';
@@ -8,6 +9,10 @@ const PORT = process.env.PORT || 3000;
 
 const sourceFolder = "src";
 const distFolder = "dist";
+const extractSass = new ExtractTextPlugin({
+    filename: "[name].[contenthash].css",
+    disable: process.env.NODE_ENV === "development"
+});
 
 module.exports = {
 	entry: {
@@ -21,7 +26,7 @@ module.exports = {
 		filename: '[name]-[hash].js'
 	},
 	module: {
-    loaders: [
+		rules: [
 			{
 	      loader: "babel-loader",
 
@@ -38,8 +43,28 @@ module.exports = {
 	        presets: ['es2015', 'stage-0', 'react'],
 	      }
 	    },
-  ]},
+			{
+        test: /\.scss$/,
+        use: [{
+            loader: "style-loader" // creates style nodes from JS strings
+        }, {
+            loader: "css-loader" // translates CSS into CommonJS
+        }, {
+            loader: "sass-loader" // compiles Sass to CSS
+        }]
+    	},
+			{
+				test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+				loader: "url-loader?limit=10000&mimetype=application/font-woff"
+			},
+      {
+				test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+				loader: "file-loader"
+			}
+		]
+	},
 	plugins: [
+		extractSass,
 		new webpack.EnvironmentPlugin([
 			'NODE_ENV'
 		]),

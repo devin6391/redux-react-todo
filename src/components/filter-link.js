@@ -17,7 +17,7 @@ import { setVisibilityFilter } from "../actions"
     }
   }
 )
-export class Link extends Component {
+export class FilterLink extends Component {
   render() {
     if (this.props.active) {
       return <span>{this.props.children}</span>

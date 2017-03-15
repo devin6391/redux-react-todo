@@ -1,6 +1,6 @@
 import React, {Component} from "react"
 
-import { Link } from "./link"
+import { FilterLink } from "./filter-link"
 
 export class Footer extends Component {
   render() {
@@ -8,17 +8,17 @@ export class Footer extends Component {
       <p>
         Show:
         {" "}
-        <Link filter="SHOW_ALL">
+        <FilterLink filter="SHOW_ALL">
           All
-        </Link>
+        </FilterLink>
         {", "}
-        <Link filter="SHOW_ACTIVE">
+        <FilterLink filter="SHOW_ACTIVE">
           Active
-        </Link>
+        </FilterLink>
         {", "}
-        <Link filter="SHOW_COMPLETED">
+        <FilterLink filter="SHOW_COMPLETED">
           Completed
-        </Link>
+        </FilterLink>
       </p>
     )
   }

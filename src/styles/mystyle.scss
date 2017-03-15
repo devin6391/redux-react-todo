@@ -1,0 +1,12 @@
+body {
+  background-color: purple;
+}
+
+.todo-list-item {
+  display: flex;
+  width: 300px;
+  height: 40px;
+  background-color: #ead320;
+  margin-top: 5px;
+  box-shadow: 1px 1px 7px rgba(0,0,0,0.5);
+}
