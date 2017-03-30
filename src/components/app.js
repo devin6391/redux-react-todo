@@ -1,4 +1,5 @@
 import React, {Component} from "react"
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 
 import fontAwesome from "../styles/fontawesome/font-awesome.scss"
 import mystyle from "../styles/mystyle.scss"
