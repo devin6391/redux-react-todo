@@ -7,6 +7,7 @@ import mystyle from "../styles/mystyle.scss"
 
 import { Header } from "./header"
 import { TodoList } from "./todo-list"
+import { SingleTask } from "./single-task"
 import { Footer } from "./footer"
 
 export class App extends Component {
@@ -18,9 +19,10 @@ export class App extends Component {
           <Header />
           <Switch>
             <Route path="/" exact component={TodoList} />
+            <Route path="/:taskId" component={SingleTask} />
             <Route render={props => (
               <div className='not-found'>
-                <h1>`Couldn't find this route`</h1>
+                <h1>"Couldn't find this route"</h1>
               </div>
             )} />
           </Switch>

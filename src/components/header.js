@@ -19,11 +19,12 @@ export class Header extends Component {
       <div className='app-header'>
         <ul>
           {this.state.list.map(todoPath => (
-            <NavLink
-              key={`${todoPath.id}`}
-              to={`${todoPath.path}`}
-              activeClassName='active-route'>
-              {`${todoPath.text}`}</NavLink>
+            <li key={`${todoPath.id}`}>
+              <NavLink
+                to={`${todoPath.path}`}
+                activeClassName='active-route'>
+                {`${todoPath.text}`}</NavLink>
+              </li>
           ))}
         </ul>
       </div>

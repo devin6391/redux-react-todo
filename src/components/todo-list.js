@@ -13,8 +13,8 @@ import { toggleTodo, fetchTodos, VisibilityFilters } from "../actions"
   },
  (dispatch) => {
    return {
-     onTodoClick: (id) => {
-       dispatch(toggleTodo(id))
+     onTodoClick: (task) => {
+       dispatch(toggleTodo(task))
      },
      getTodo: () => {
        dispatch(fetchTodos())
@@ -31,7 +31,7 @@ export class TodoList extends Component {
       <Todo
         key={todo.id}
         {...todo}
-        onClick={(e) => { this.props.onTodoClick(todo.id) }} />
+        onClick={(e) => { this.props.onTodoClick(todo) }} />
     )
 
     if(

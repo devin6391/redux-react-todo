@@ -11,7 +11,7 @@ router.render = function (req, res) {
   })
 }
 
-// server.use(middlewares)
+server.use(middlewares)
 
 // Add custom routes before JSON Server router
 server.get('/echo', function (req, res) {
@@ -32,7 +32,7 @@ server.get('/echo', function (req, res) {
 // You can use the one used by JSON Server
 server.use(jsonServer.bodyParser)
 server.use(function (req, res, next) {
-  if (req.method === 'POST') {
+  if (req.method === 'POST' || req.method === 'PUT') {
     req.body.createdAt = Date.now()
   }
   res.header('Access-Control-Allow-Origin', '*');

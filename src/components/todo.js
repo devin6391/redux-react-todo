@@ -1,4 +1,5 @@
 import React, {Component} from "react"
+import { Link } from 'react-router-dom'
 
 export class Todo extends Component {
   render() {
@@ -9,9 +10,9 @@ export class Todo extends Component {
         }}
         className="todo-list-item"
       >
-        <span style={{margin: "auto"}}>
+        <Link to={"/" + this.props.id} style={{margin: "auto"}}>
           {this.props.text}
-        </span>
+        </Link>
         <input
           type='checkbox'
           checked={this.props.completed}

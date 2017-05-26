@@ -1,7 +1,8 @@
 @import "./header";
 
 body {
-  background-color: purple;
+  background-color: #fff;
+  margin: 0;
 }
 
 .todo-list-item {
@@ -11,4 +12,12 @@ body {
   background-color: #ead320;
   margin-top: 5px;
   box-shadow: 1px 1px 7px rgba(0,0,0,0.5);
+  a {
+    text-decoration: none;
+    color: #000;
+    &:hover, &:active, &:focus, &:visited {
+      color: #000;
+      text-decoration: none;
+    }
+  }
 }

@@ -2,19 +2,19 @@
   "todos": [
     {
       "id": 1,
-      "createdAt": 1469212200000,
       "completed": true,
-      "text": "Learn React",
-      "authorId": 1,
-      "description": "Yes! I can learn it"
+      "text": "Learning React",
+      "authorId": "1",
+      "description": "Are! I am learning it",
+      "createdAt": 1495785055838
     },
     {
       "id": 2,
-      "createdAt": 1469989800000,
       "completed": false,
       "text": "Learn Redux",
       "authorId": 2,
-      "description": "Yes! I can learn it too"
+      "description": "Yes! I can learn it too",
+      "createdAt": 1495785085468
     },
     {
       "id": 3,
